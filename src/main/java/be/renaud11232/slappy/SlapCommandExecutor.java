@@ -27,16 +27,21 @@ public class SlapCommandExecutor implements CommandExecutor {
         if(player == null) {
             return false;
         }
-        double slapness = 1;
+        double slapness = 0.7;
         if(strings.length == 2) {
             try {
-                slapness = Double.parseDouble(strings[1]);
+                slapness *= Double.parseDouble(strings[1]);
             } catch (NumberFormatException ignored) {
                 return false;
             }
         }
         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_ATTACK_NODAMAGE, 1, 1);
-        player.setVelocity(new Vector((random.nextDouble() * slapness * 2) - slapness, random.nextDouble() * slapness, (random.nextDouble() * slapness * 2) - slapness));
+        double angle1 = Math.toRadians((random.nextDouble() * 180) - 90);
+        double angle2 = Math.toRadians(random.nextDouble() * 360);
+        double x = slapness * Math.sin(angle1) * Math.cos(angle2);
+        double y = slapness * Math.cos(angle1);
+        double z = slapness * Math.sin(angle1) * Math.sin(angle2);
+        player.setVelocity(new Vector(x, y, z));
         commandSender.sendMessage("You slapped " + ChatColor.AQUA + strings[0]);
         return true;
     }
