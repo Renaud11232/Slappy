@@ -30,7 +30,7 @@ public class SlapCommandExecutor implements CommandExecutor {
         double slapness = 0.7;
         if(strings.length == 2) {
             try {
-                slapness *= Double.parseDouble(strings[1]);
+                slapness *= Math.min(Math.max(Double.parseDouble(strings[1]), 0), 10);
             } catch (NumberFormatException ignored) {
                 return false;
             }

@@ -1,6 +1,6 @@
 main: be.renaud11232.slappy.SlappyPlugin
 name: Slappy
-version: "1.0"
+version: 1.0.1
 description: Allows to slap naught players
 author: Renaud11232
 
