@@ -1,8 +1,9 @@
 main: be.renaud11232.slappy.SlappyPlugin
 name: Slappy
-version: 1.0.1
+version: '${project.version}'
 description: Allows to slap naughty players
 author: Renaud11232
+api-version: 1.13
 
 commands:
   slap:
