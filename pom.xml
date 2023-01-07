@@ -35,6 +35,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <finalName>Slappy</finalName>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>

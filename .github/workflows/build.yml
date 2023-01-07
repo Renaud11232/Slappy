@@ -1,7 +1,10 @@
 name: Build
 on:
-  - release
-  - push
+  release:
+    types:
+      - released
+      - prereleased
+  push:
 jobs:
   build:
     name: Build plugin JAR
@@ -19,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: target/slappy*.jar
+          path: target/Slappy.jar
   upload_release:
     name: Upload built jar to release
     runs-on: ubuntu-latest
@@ -30,10 +33,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: target
+          path: .
       - name: Upload to GitHub release
         uses: svenstaro/upload-release-action@v2
         with:
-          file: target/*.jar
-          asset_name: slappy.jar
+          file: Slappy.jar
 
