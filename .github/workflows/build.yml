@@ -18,6 +18,7 @@ jobs:
       - name: Upload build result
         uses: actions/upload-artifact@v3
         with:
+          name: build
           path: target/slappy*.jar
   upload_release:
     name: Upload built jar to release
@@ -28,6 +29,7 @@ jobs:
       - name: Download build results
         uses: actions/download-artifact@v3
         with:
+          name: build
           path: target
       - name: Upload to GitHub release
         uses: svenstaro/upload-release-action@v2
