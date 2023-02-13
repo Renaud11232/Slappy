@@ -10,8 +10,15 @@ commands:
     description: Slaps a naughty player
     usage: /<command> <player> [slapness]
     permission: slappy.slap
+  punch:
+    description: Punches a naughty player
+    usage: /<command> <player> <damage> [slapness]
+    permission: slappy.punch
 
 permissions:
   slappy.slap:
     description: Allows a user to slap another player
+    default: op
+  slappy.punch:
+    description: Allows a user to punch another player
     default: op

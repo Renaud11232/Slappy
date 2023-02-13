@@ -1,13 +1,16 @@
 package be.renaud11232.slappy;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import be.renaud11232.awesomecommand.AwesomePlugin;
+import be.renaud11232.slappy.commands.PunchCommand;
+import be.renaud11232.slappy.commands.SlapCommand;
 
-public class SlappyPlugin extends JavaPlugin {
+public class SlappyPlugin extends AwesomePlugin {
 
     @Override
     public void onEnable() {
         super.onEnable();
-        getCommand("slap").setExecutor(new SlapCommandExecutor());
+        initCommand(SlapCommand.class);
+        initCommand(PunchCommand.class);
     }
 
     @Override
