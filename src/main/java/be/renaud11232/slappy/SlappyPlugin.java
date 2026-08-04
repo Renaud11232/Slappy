@@ -9,9 +9,4 @@ public class SlappyPlugin extends JavaPlugin {
         super.onEnable();
         getCommand("slap").setExecutor(new SlapCommandExecutor());
     }
-
-    @Override
-    public void onDisable() {
-        super.onDisable();
-    }
 }

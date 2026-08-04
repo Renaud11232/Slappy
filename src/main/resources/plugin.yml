@@ -1,16 +1,16 @@
-main: be.renaud11232.slappy.SlappyPlugin
 name: Slappy
-version: '${project.version}'
-description: Allows to slap naughty players
-author: Renaud11232
-api-version: 1.13
-
+version: '${version}'
+main: be.renaud11232.slappy.SlappyPlugin
+api-version: '${apiVersion}'
+authors:
+  - Renaud11232
+description: '${description}'
+website: '${website}'
 commands:
   slap:
     description: Slaps a naughty player
     usage: /<command> <player> [slapness]
     permission: slappy.slap
-
 permissions:
   slappy.slap:
     description: Allows a user to slap another player
